@@ -50,23 +50,23 @@ export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapse }
         `}
       >
         {/* Header */}
-        <div className={`flex flex-col items-center ${collapsed ? 'px-2' : 'px-4'} pt-5 pb-3`}>
+        <div className={`flex flex-col items-center ${collapsed ? 'px-2 pt-3 pb-2' : 'px-4 pt-3 pb-1'}`}>
           {!collapsed && (
             <>
-              <div className="w-full rounded-2xl overflow-hidden mb-2">
+              <div className="w-[80%] rounded-xl overflow-hidden">
                 <img src={logoUrl} alt="Logo Empresa" className="w-full h-auto object-cover" />
               </div>
-              <div className="flex items-center gap-1.5 opacity-60">
-                <div className="w-4 h-4 shrink-0">
+              <div className="flex items-center gap-1 mt-1 opacity-50">
+                <div className="w-3 h-3 shrink-0">
                   <img src={iconUrl} alt="FerreApp" className="w-full h-full object-contain" />
                 </div>
-                <span className="text-[8px] font-bold text-gray-400 uppercase tracking-widest">FerreApp</span>
+                <span className="text-[7px] font-bold text-gray-400 uppercase tracking-widest">FerreApp</span>
               </div>
             </>
           )}
 
           {collapsed && (
-            <div className="w-10 h-10 rounded-xl overflow-hidden">
+            <div className="w-9 h-9 rounded-lg overflow-hidden">
               <img src={logoUrl} alt="Logo" className="w-full h-full object-cover" />
             </div>
           )}
@@ -90,7 +90,7 @@ export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapse }
         </button>
 
         {/* Navigation */}
-        <nav className="flex-1 py-8 flex flex-col gap-3">
+        <nav className="flex-1 py-4 flex flex-col gap-0.5">
           {navItems.map((item) => {
             const Icon = item.icon
             const isActive = location.pathname === item.path

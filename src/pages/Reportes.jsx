@@ -428,16 +428,28 @@ export default function Reportes() {
       ) : (
         <>
           {/* ── KPIs ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-2xl border border-gray-200">
-              <TrendingUp className="w-5 h-5 text-[#ff8a00] mb-3" />
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Ventas en el mes</p>
-              <p className="text-2xl font-extrabold text-[#ff8a00]">{formatCurrency(kpis.totalVentas)}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="bg-white/90 px-5 py-4 rounded-2xl border border-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Ventas en el mes</p>
+                  <p className="text-2xl font-extrabold text-[#ff8a00]">{formatCurrency(kpis.totalVentas)}</p>
+                </div>
+                <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                  <TrendingUp className="w-4 h-4 text-[#ff8a00]" />
+                </div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-2xl border border-gray-200">
-              <Users className="w-5 h-5 text-blue-600 mb-3" />
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Visitas en el mes</p>
-              <p className="text-2xl font-extrabold text-gray-900">{kpis.totalVisitas}</p>
+            <div className="bg-white/90 px-5 py-4 rounded-2xl border border-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Total Visitas en el mes</p>
+                  <p className="text-2xl font-extrabold text-gray-900">{kpis.totalVisitas}</p>
+                </div>
+                <div className="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+                  <Users className="w-4 h-4 text-blue-600" />
+                </div>
+              </div>
             </div>
           </div>
 
