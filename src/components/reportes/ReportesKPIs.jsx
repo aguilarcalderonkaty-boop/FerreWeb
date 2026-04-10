@@ -74,13 +74,13 @@ export default function ReportesKPIs({ startDate, endDate }) {
       {kpis.map((kpi, i) => {
         const Icon = kpi.icon
         return (
-          <div key={i} className="bg-white p-6 rounded-2xl border border-gray-200 flex items-center gap-4">
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${kpi.iconBg}`}>
-              <Icon className="w-6 h-6" />
+          <div key={i} className="bg-white/90 px-5 py-4 rounded-2xl border border-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.02)] flex items-center gap-4 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300">
+            <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${kpi.iconBg}`}>
+              <Icon className="w-4.5 h-4.5" />
             </div>
             <div>
               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{kpi.title}</p>
-              <p className="text-3xl font-extrabold text-gray-900 tracking-tight mt-1">{kpi.value}</p>
+              <p className="text-2xl font-extrabold text-gray-900 tracking-tight mt-0.5">{kpi.value}</p>
             </div>
           </div>
         )

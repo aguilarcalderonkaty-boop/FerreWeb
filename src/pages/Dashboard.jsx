@@ -40,19 +40,21 @@ function getWeekRange() {
 
 function KpiCard({ icon: Icon, iconBg, title, value, valueColor = 'text-gray-900', subtitle, children, badge }) {
   return (
-    <div className="relative bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col justify-end min-h-[160px]">
-      <div className="absolute top-6 right-6 flex flex-col items-end gap-3">
-        <div className={`w-10 h-10 rounded-2xl flex items-center justify-center ${iconBg}`}>
-          <Icon className="w-5 h-5" />
+    <div className="relative bg-white/90 px-5 py-4 rounded-2xl border border-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300">
+      <div className="flex items-center justify-between gap-4">
+        <div className="flex-1 min-w-0">
+          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{title}</p>
+          <p className={`text-2xl font-extrabold tracking-tight ${valueColor}`}>{value}</p>
+          {subtitle && <p className="text-[11px] text-gray-400 mt-1">{subtitle}</p>}
         </div>
-        {badge}
+        <div className="flex flex-col items-end gap-2 shrink-0">
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${iconBg}`}>
+            <Icon className="w-4.5 h-4.5" />
+          </div>
+          {badge}
+        </div>
       </div>
-      <div>
-        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5">{title}</p>
-        <p className={`text-3xl font-extrabold tracking-tight ${valueColor}`}>{value}</p>
-        {subtitle && <p className="text-xs text-gray-400 mt-2">{subtitle}</p>}
-        {children && <div className="mt-4">{children}</div>}
-      </div>
+      {children && <div className="mt-3">{children}</div>}
     </div>
   )
 }

@@ -42,17 +42,21 @@ function KpiCards({ stats }) {
   ]
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
       {cards.map((c, i) => {
         const Icon = c.icon
         return (
-          <div key={i} className="relative bg-white p-5 rounded-2xl border border-gray-200 flex flex-col justify-center items-center text-center min-h-[140px]">
-            <div className={`absolute top-4 right-4 w-9 h-9 ${c.bg} rounded-xl flex items-center justify-center`}>
-              <Icon className={`w-4 h-4 ${c.color}`} />
+          <div key={i} className="bg-white/90 px-5 py-4 rounded-2xl border border-gray-50 shadow-[0_2px_20px_rgba(0,0,0,0.02)] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{c.label}</p>
+                <p className="text-2xl font-extrabold text-gray-900 tracking-tight">{c.value}</p>
+                <p className="text-[10px] text-gray-400 mt-1">{c.sub}</p>
+              </div>
+              <div className={`w-9 h-9 ${c.bg} rounded-xl flex items-center justify-center shrink-0`}>
+                <Icon className={`w-4 h-4 ${c.color}`} />
+              </div>
             </div>
-            <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">{c.label}</p>
-            <p className="text-3xl font-extrabold text-gray-900 tracking-tight">{c.value}</p>
-            <p className="text-[11px] text-gray-400 mt-1">{c.sub}</p>
           </div>
         )
       })}
